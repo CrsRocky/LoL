@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LoL.Friends\LoL.Friends.csproj" />
+    <ProjectReference Include="..\LoL.MainContent\LoL.MainContent.csproj" />
+    <ProjectReference Include="..\LoL.Profile\LoL.Profile.csproj" />
+    <ProjectReference Include="..\LoL.Resources\LoL.Resources.csproj" />
+    <ProjectReference Include="..\LoL.TopMemu\LoL.TopMemu.csproj" />
+  </ItemGroup>
+</Project>
