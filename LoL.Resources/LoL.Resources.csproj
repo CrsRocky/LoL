@@ -16,6 +16,8 @@
     <None Remove="Images\LevelBorders\Level500.png" />
     <None Remove="Images\LevelBorders\Level_450_Summoner_Icon_Border.jpg" />
     <None Remove="Images\LevelBorders\Level_500_Summoner_Icon_Border.jpg" />
+    <None Remove="Images\lol-logo-03.png" />
+    <None Remove="Images\lol_icon.png" />
     <None Remove="Images\Profiles\0.jpg" />
     <None Remove="Images\Profiles\1.jpg" />
     <None Remove="Images\Profiles\2.jpg" />
@@ -48,6 +50,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\lol-logo-03.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Images\bg-yasuo.jpg" />
     <Resource Include="Images\LevelBorders\Level125.png" />
     <Resource Include="Images\LevelBorders\Level200.png" />
@@ -55,6 +61,7 @@
     <Resource Include="Images\LevelBorders\Level375.png" />
     <Resource Include="Images\LevelBorders\Level500.png" />
     <Resource Include="Images\LevelBorders\Level400.png" />
+    <Resource Include="Images\lol_icon.png" />
     <Resource Include="Images\Profiles\0.jpg" />
     <Resource Include="Images\Profiles\1.jpg" />
     <Resource Include="Images\Profiles\2.jpg" />

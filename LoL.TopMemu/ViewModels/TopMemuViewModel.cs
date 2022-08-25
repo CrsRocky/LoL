@@ -10,16 +10,16 @@ namespace LoL.TopMemu.ViewModels
 {
     public class TopMemuViewModel : BindableBase
     {
-        private string _message;
-        public string Message
-        {
-            get { return _message; }
-            set { SetProperty(ref _message, value); }
-        }
+        public DelegateCommand PlayCommand;
 
         public TopMemuViewModel()
         {
-            Message = "View A from your Prism Module";
+            PlayCommand = new DelegateCommand(Play);
+        }
+
+        void Play()
+        {
+           
         }
     }
 }
