@@ -15,22 +15,18 @@
     SnapsToDevicePixels="True"
     mc:Ignorable="d">
     <UserControl.Resources>
-
         <LinearGradientBrush x:Key="ProfileBorderBrush" StartPoint="0.5,0" EndPoint="0.5,1">
             <GradientStop Offset="0" Color="#C5A668" />
             <GradientStop Offset="0.25" Color="#A47D30" />
             <GradientStop Offset="0.75" Color="#8D6D32" />
             <GradientStop Offset="1" Color="#614b24" />
         </LinearGradientBrush>
-
         <LinearGradientBrush x:Key="ProfileOverBorderBrush" StartPoint="0.5, 0" EndPoint="0.5, 1">
             <GradientStop Offset="0" Color="#FFE57B" />
             <GradientStop Offset="0.5" Color="#E1AC48" />
             <GradientStop Offset="1" Color="#94723A" />
         </LinearGradientBrush>
-
         <cvt:ArcAngleConverter x:Key="ArcAngleConverter" />
-
         <Style
             x:Key="OnlineTxbStyle"
             TargetType="TextBlock">
@@ -39,7 +35,6 @@
             <Setter Property="Foreground" Value="{Binding OnlineLblForeground}" />
             <Setter Property="Text" Value="{Binding OnlineSts}" />
         </Style>
-
         <Style
             x:Key="UserNameTxbStyle"
             TargetType="TextBlock">
@@ -48,7 +43,6 @@
             <Setter Property="Foreground" Value="#EEE6D1" />
             <Setter Property="Text" Value="{Binding UserName}" />
         </Style>
-
         <ControlTemplate
             x:Key="OnlineBtnTemplate"
             TargetType="Button">
@@ -62,7 +56,6 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
-
     </UserControl.Resources>
 
     <Grid>
@@ -120,6 +113,7 @@
                                                 UseLayoutRounding="True">
                                                 <Ellipse.Fill>
                                                     <ImageBrush
+                                                        x:Name="imageBrush"
                                                         ImageSource="{Binding ProfileUri}"
                                                         RenderOptions.BitmapScalingMode="Fant" />
                                                 </Ellipse.Fill>
