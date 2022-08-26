@@ -9,14 +9,11 @@
     Height="720"
     prism:ViewModelLocator.AutoWireViewModel="True"
     Style="{StaticResource mianViewStyle}">
-
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <prism:InvokeCommandAction Command="{Binding MainViewLoadedCommand}" />
         </i:EventTrigger>
     </i:Interaction.Triggers>
-
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -26,6 +23,11 @@
             <ColumnDefinition />
             <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
+        <Image
+            Grid.RowSpan="2"
+            IsHitTestVisible="False"
+            Source="/LoL.Resources;component/Images/550.jpg"
+            Stretch="Fill" />
         <Border
             Grid.ColumnSpan="2"
             Height="2"
@@ -33,40 +35,21 @@
             Background="#785a28" />
         <Border
             Grid.ColumnSpan="2"
-            BorderBrush="#22ffffff"
-            BorderThickness="0,0,0,1"
-            SnapsToDevicePixels="True"
-            UseLayoutRounding="True" />
-        <Grid
-            Grid.Row="0"
-            Grid.ColumnSpan="2"
-            Height="80"
-            VerticalAlignment="Top"
-            Background="Transparent">
-            <i:Interaction.Triggers>
-                <i:EventTrigger EventName="MouseLeftButtonDown">
-                    <prism:InvokeCommandAction
-                        Command="{Binding DragMoveCommand}"
-                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}, AncestorLevel=1}}" />
-                </i:EventTrigger>
-            </i:Interaction.Triggers>
-        </Grid>
-
+            BorderBrush="#3C3A35"
+            BorderThickness="0,0,0,1" />
         <ContentControl
             Grid.Row="0"
             Grid.Column="0"
             prism:RegionManager.RegionName="{x:Static re:PrismRegions.TopMemuRegionName}" />
-
         <ContentControl
             Grid.Row="0"
             Grid.Column="1"
+            Margin="0,2,0,0"
             prism:RegionManager.RegionName="{x:Static re:PrismRegions.ProfileRegionName}" />
-
         <ContentControl
             Grid.Row="1"
             Grid.Column="0"
             prism:RegionManager.RegionName="{x:Static re:PrismRegions.MainContentRegionName}" />
-
         <ContentControl
             Grid.Row="1"
             Grid.Column="1"

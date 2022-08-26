@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\550.jpg" />
     <None Remove="Images\bg-yasuo.jpg" />
     <None Remove="Images\LevelBorders\Level125.png" />
     <None Remove="Images\LevelBorders\Level200.png" />
@@ -50,6 +51,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\550.jpg" />
     <Resource Include="Images\lol-logo-03.png" />
   </ItemGroup>
 

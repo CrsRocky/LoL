@@ -1,13 +1,15 @@
-﻿using LoL.Main.Views;
-using Prism.Ioc;
-using System.Windows;
+﻿using LoL.Core;
+using LoL.Friends;
+using LoL.Main.Common;
 using LoL.Main.ViewModels;
-using Prism.Mvvm;
-using Prism.Modularity;
+using LoL.Main.Views;
+using LoL.MainContent;
 using LoL.Profile;
 using LoL.TopMemu;
-using LoL.MainContent;
-using LoL.Friends;
+using Prism.Ioc;
+using Prism.Modularity;
+using Prism.Mvvm;
+using System.Windows;
 
 namespace LoL.Main
 {
@@ -24,6 +26,7 @@ namespace LoL.Main
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             ViewModelLocationProvider.Register<MainView, MainViewModel>();
+            containerRegistry.RegisterSingleton<IDragMove, DragMove>();
         }
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
@@ -33,7 +36,5 @@ namespace LoL.Main
             moduleCatalog.AddModule<MainContentModule>();
             moduleCatalog.AddModule<FriendsModule>();
         }
-
-
     }
 }

@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LoL.Core;
+using LoL.Profile.Views;
 using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
-using LoL.Core;
-using System.Windows;
-using LoL.Profile.Views;
+using System;
 using System.ComponentModel;
+using System.Windows;
 using System.Windows.Media;
 
 namespace LoL.Profile.ViewModels
@@ -22,7 +18,6 @@ namespace LoL.Profile.ViewModels
         private Brush onlineBtnStroke = new SolidColorBrush(onlineBtnStrokeColor);
         private Brush onlineBtnFill = new SolidColorBrush(onlineBtnFillColor);
         private Brush onlineLblForeground = new SolidColorBrush(onlineLblForegroundColor);
-
 
         private OnlineState onlineState = OnlineState.Online;
         private static readonly Color onlineBtnStrokeColor = Color.FromRgb(114, 255, 174);
@@ -38,7 +33,6 @@ namespace LoL.Profile.ViewModels
         public DelegateCommand CloseCommand { get; private set; }
         public DelegateCommand ChangeOnlineCommand { get; private set; }
         public DelegateCommand InfoCueCommand { get; private set; }
-
 
         public string Level
         {
@@ -83,24 +77,27 @@ namespace LoL.Profile.ViewModels
         }
 
         private string userName;
+
         public string UserName
         {
             get { return userName; }
             set { SetProperty(ref userName, value); }
         }
 
-
         private Uri profileUri;
+
         public Uri ProfileUri
         {
             get { return profileUri; }
             set { SetProperty(ref profileUri, value); }
         }
 
+        public DelegateCommand<Window> DragMoveCommand { get; private set; }
 
-        public ProfileViewModel(IEventAggregator ea)
+        public ProfileViewModel(IEventAggregator ea, IDragMove dragMove)
         {
             _eventAggregator = ea;
+            DragMoveCommand = dragMove.DragMoveCommand;
             MinimizeCommand = new DelegateCommand(Minimize);
             CloseCommand = new DelegateCommand(Close);
             SelectProfileCommand = new DelegateCommand(SelectProfile);
@@ -113,8 +110,6 @@ namespace LoL.Profile.ViewModels
 
         void InfoCue()
         {
-            
-
         }
 
         void ChangeOnline()
@@ -128,6 +123,7 @@ namespace LoL.Profile.ViewModels
                     onlineState = OnlineState.Offline;
                     OnlineSts = "离开";
                     break;
+
                 case OnlineState.Offline:
                     OnlineBtnStroke = new SolidColorBrush(onlineBtnStrokeColor);
                     OnlineBtnFill = new SolidColorBrush(onlineBtnFillColor);
@@ -152,7 +148,6 @@ namespace LoL.Profile.ViewModels
         {
             _eventAggregator.GetEvent<MainViewEvent>().Publish(MainEventType.Minimize);
         }
-
     }
 
     public enum OnlineState
@@ -162,12 +157,11 @@ namespace LoL.Profile.ViewModels
         /// 在线
         /// </summary>
         Online,
+
         [Description("离开")]
         /// <summary>
         /// 离开
         /// </summary>
         Offline,
     }
-
-
 }

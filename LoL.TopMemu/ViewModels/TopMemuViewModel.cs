@@ -1,25 +1,24 @@
-﻿using Prism.Commands;
+﻿using LoL.Core;
+using Prism.Commands;
 using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
 
 namespace LoL.TopMemu.ViewModels
 {
     public class TopMemuViewModel : BindableBase
     {
-        public DelegateCommand PlayCommand;
+        public DelegateCommand PlayCommand { get; private set; }
 
-        public TopMemuViewModel()
+        public DelegateCommand<Window> DragMoveCommand { get; private set; }
+
+        public TopMemuViewModel(IDragMove dragMove)
         {
+            DragMoveCommand = dragMove.DragMoveCommand;
             PlayCommand = new DelegateCommand(Play);
         }
 
         void Play()
         {
-           
         }
     }
 }

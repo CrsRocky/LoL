@@ -1,10 +1,10 @@
-﻿using System.Windows;
-using Prism.Mvvm;
-using Prism.Commands;
-using Prism.Regions;
-using Prism.Events;
-using LoL.Core;
+﻿using LoL.Core;
 using LoL.Main.Common;
+using Prism.Commands;
+using Prism.Events;
+using Prism.Mvvm;
+using Prism.Regions;
+using System.Windows;
 
 namespace LoL.Main.ViewModels
 {
@@ -15,7 +15,6 @@ namespace LoL.Main.ViewModels
 
         public MainViewModel(IRegionManager regionManager, IEventAggregator ea)
         {
-            DragMoveCommand = new DelegateCommand<Window>((o) => { o.DragMove(); });
             MainViewLoadedCommand = new DelegateCommand(() =>
             {
                 regionManager.RegisterViewWithRegion(PrismRegions.ProfileRegionName, PrismRegions.ProfileRegionView);
@@ -31,15 +30,15 @@ namespace LoL.Main.ViewModels
                     case MainEventType.Minimize:
                         w.WindowState = WindowState.Minimized;
                         break;
+
                     case MainEventType.Close:
                         w.Close();
                         break;
+
                     default:
                         break;
                 }
             });
         }
-
-
     }
 }
