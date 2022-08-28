@@ -80,9 +80,9 @@
 
         <Button
             x:Name="btn"
-            Width="65"
-            Height="70"
-            Margin="8"
+            Width="60"
+            Height="65"
+            Margin="10,0,0,0"
             Command="{Binding SelectProfileCommand}"
             ToolTipService.HasDropShadow="True"
             ToolTipService.InitialShowDelay="0">
@@ -270,7 +270,7 @@
 
         <Grid
             Grid.Column="1"
-            Width="145"
+            Width="155"
             VerticalAlignment="Top">
             <Grid.RowDefinitions>
                 <RowDefinition />
@@ -372,7 +372,7 @@
 
             <TextBlock
                 Grid.Row="1"
-                Margin="0,10,0,0"
+                Margin="8,10,0,0"
                 VerticalAlignment="Center"
                 FontSize="15"
                 Style="{StaticResource UserNameTxbStyle}" />
@@ -384,7 +384,7 @@
                     <Button
                         Width="11"
                         Height="11"
-                        Margin="0,2,0,0"
+                        Margin="8   ,2,0,0"
                         VerticalAlignment="Top"
                         Command="{Binding ChangeOnlineCommand}"
                         Template="{StaticResource OnlineBtnTemplate}" />

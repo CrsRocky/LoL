@@ -13,8 +13,9 @@ namespace LoL.Main.ViewModels
         public DelegateCommand<Window> DragMoveCommand { get; private set; }
         public DelegateCommand MainViewLoadedCommand { get; private set; }
 
-        public MainViewModel(IRegionManager regionManager, IEventAggregator ea)
+        public MainViewModel(IRegionManager regionManager, IEventAggregator ea, IDragMove dragMove)
         {
+            DragMoveCommand = dragMove.DragMoveCommand;
             MainViewLoadedCommand = new DelegateCommand(() =>
             {
                 regionManager.RegisterViewWithRegion(PrismRegions.ProfileRegionName, PrismRegions.ProfileRegionView);

@@ -23,6 +23,19 @@
             <ColumnDefinition />
             <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
+        <Grid
+            Grid.ColumnSpan="2"
+            Height="80"
+            VerticalAlignment="Top"
+            Background="Transparent">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="MouseLeftButtonDown">
+                    <prism:InvokeCommandAction
+                        Command="{Binding DragMoveCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Grid>
         <Image
             Grid.RowSpan="2"
             IsHitTestVisible="False"
