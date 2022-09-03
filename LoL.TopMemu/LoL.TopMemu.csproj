@@ -8,5 +8,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LoL.Core\LoL.Core.csproj" />
+    <ProjectReference Include="..\Lol.Resources\LoL.Resources.csproj" />
   </ItemGroup>
 </Project>
