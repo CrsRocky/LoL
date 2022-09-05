@@ -8,6 +8,7 @@
     Width="1280"
     Height="720"
     prism:ViewModelLocator.AutoWireViewModel="True"
+    Icon="/LoL.Resources;component/Images/Lol.ico"
     Style="{StaticResource mianViewStyle}">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
