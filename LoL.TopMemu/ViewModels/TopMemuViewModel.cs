@@ -9,6 +9,9 @@ namespace LoL.TopMemu.ViewModels
 {
     public class TopMemuViewModel : BindableBase
     {
+        private long coupon;
+        private long blueEssernce;
+
         public DelegateCommand PlayCommand { get; private set; }
 
         public DelegateCommand<Window> DragMoveCommand { get; private set; }
@@ -16,6 +19,18 @@ namespace LoL.TopMemu.ViewModels
         public ObservableCollection<string> TextMenu { get; private set; }
 
         public ObservableCollection<IconMenuModel> IconMenu { get; private set; }
+
+        public long Coupon
+        {
+            get { return coupon; }
+            set { SetProperty(ref coupon, value); }
+        }
+
+        public long BlueEssence
+        {
+            get { return blueEssernce; }
+            set { SetProperty(ref blueEssernce, value); }
+        }
 
         public TopMemuViewModel(IDragMove dragMove)
         {
@@ -50,6 +65,8 @@ namespace LoL.TopMemu.ViewModels
                     Icon ="Mall"
                 },
             };
+            Coupon = 500;
+            BlueEssence = 10000;
         }
 
         void Play()
